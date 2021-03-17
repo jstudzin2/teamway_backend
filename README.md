@@ -1,7 +1,7 @@
 # How to build app
 To build application execute: `mvn package`.
 
-#Prerequisities
+#Pre-requisities
 Postgres database
 
 # How to run app
