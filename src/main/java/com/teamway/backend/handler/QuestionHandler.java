@@ -33,7 +33,7 @@ public class QuestionHandler {
     public ScoreApiModel calculateScore(Collection<Long> answers) {
         List<Answer> answerList = jpaRepository.findAllById(answers);
         LongSummaryStatistics scores = scoreService.calculate(answerList);
-        return new ScoreApiModel(scores.getSum(), scores.getSum() >= 6);
+        return new ScoreApiModel(scores.getSum(), scoreService.isIntrovertic(scores.getSum()));
     }
 
 
