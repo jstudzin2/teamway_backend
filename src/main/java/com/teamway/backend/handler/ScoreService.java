@@ -11,6 +11,9 @@ import java.util.stream.Collectors;
 public class ScoreService {
 
     public LongSummaryStatistics calculate(List<Answer> answerList) {
-        return answerList.stream().map(answer -> answer.getScore()).collect(Collectors.summarizingLong(Long::longValue));
+        return answerList
+                .stream()
+                .map(Answer::getScore)
+                .collect(Collectors.summarizingLong(Long::longValue));
     }
 }

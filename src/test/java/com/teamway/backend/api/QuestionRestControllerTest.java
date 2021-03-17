@@ -17,7 +17,7 @@ class QuestionRestControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void listShouldReturn_200_code() throws Exception {
+    void listShouldReturn_200_code() throws Exception {
         this.mockMvc.perform(get("/questions")).andExpect(status().isOk());
     }
 
