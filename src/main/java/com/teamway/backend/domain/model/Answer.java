@@ -18,6 +18,7 @@ public class Answer extends BaseModel {
     @Column(length = 255)
     private String value;
 
+    @Column(nullable = false)
     private Long score;
 
 }
