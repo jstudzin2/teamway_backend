@@ -22,7 +22,7 @@ public class QuestionHandlerTest {
     QuestionHandler handler;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp()  {
         handler = new QuestionHandler(questionJpaRepository, answerJpaRepository, new ScoreService(), new ApiMapper());
     }
 

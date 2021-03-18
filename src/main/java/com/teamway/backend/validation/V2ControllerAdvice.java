@@ -14,7 +14,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class V2ControllerAdvice {
 
     @ExceptionHandler
-    public ResponseEntity<ErrorApiModel> handleNotFoundException(IncorrectDataException e) {
+    public ResponseEntity<ErrorApiModel> handleIncorrectDataException(IncorrectDataException e) {
+        log.error(e);
+        return new ResponseEntity<>(new ErrorApiModel(e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorApiModel> topHandler(Throwable e) {
         log.error(e);
         return new ResponseEntity<>(new ErrorApiModel(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
