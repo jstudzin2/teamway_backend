@@ -2,6 +2,7 @@ package com.teamway.backend.handler;
 
 import com.teamway.backend.api.dto.ScoreApiModel;
 import com.teamway.backend.domain.model.Answer;
+import com.teamway.backend.handler.impl.ScoreServiceImpl;
 import org.assertj.core.util.Lists;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,7 +24,7 @@ public class QuestionHandlerTest {
 
     @Before
     public void setUp()  {
-        handler = new QuestionHandler(questionJpaRepository, answerJpaRepository, new ScoreService(), new ApiMapper());
+        handler = new QuestionHandler(questionJpaRepository, answerJpaRepository, new ScoreServiceImpl(), new ApiMapper());
     }
 
     @Test
