@@ -31,6 +31,9 @@ public class QuestionHandler {
     }
 
     public ScoreApiModel calculateScore(Collection<Long> answers) {
+        if (answers == null || answers.isEmpty()) {
+            return new ScoreApiModel(0L, scoreService.isIntrovertic(0));
+        }
         List<Answer> answerList = jpaRepository.findAllById(answers);
         LongSummaryStatistics scores = scoreService.calculate(answerList);
         return new ScoreApiModel(scores.getSum(), scoreService.isIntrovertic(scores.getSum()));

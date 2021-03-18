@@ -7,5 +7,5 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ErrorApiModel {
 
-    private String messsage;
+    private final String massage;
 }

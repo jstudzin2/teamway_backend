@@ -15,11 +15,11 @@ public class ApiMapper {
         return questions.stream().map(this::map).collect(Collectors.toList());
     }
 
-    private QuestionApiModel map(Question questions) {
+    private QuestionApiModel map(Question question) {
         return QuestionApiModel.builder()
-                .description(questions.getDescription())
-                .id(questions.getId())
-                .answers(questions.getAnswers().stream().map(this::map).collect(Collectors.toList()))
+                .description(question.getDescription())
+                .id(question.getId())
+                .answers(question.getAnswers() == null ? null : question.getAnswers().stream().map(this::map).collect(Collectors.toList()))
                 .build();
     }
 

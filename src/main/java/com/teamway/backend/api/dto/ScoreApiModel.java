@@ -11,5 +11,5 @@ public class ScoreApiModel {
 
     private Long myScore;
 
-    private boolean introvertic;
+    private boolean introvert;
 }
